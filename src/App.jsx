@@ -8,21 +8,21 @@ import {
   Ring,
 } from "@react-three/drei";
 import { Robot } from "./assets/model/robot/Robot";
-/* import { baffle } from "baffle"; */
+import baffle from "baffle";
 import { useEffect } from "react";
 import "./App.scss";
 
 const App = () => {
- /*  useEffect(() => {
+  useEffect(() => {
     const target = baffle(".title");
     target.set({
       characters: "░P░H░A░N░T░O░M░",
-      speed: 100,
+      speed: 50,
     });
     target.start();
     target.reveal(1000, 1000);
   });
- */
+
   return (
     <>
       <color attach="background" args={["#333333"]} />
@@ -38,11 +38,11 @@ const App = () => {
       <Environment preset="warehouse" />
 
       <ScrollControls
-        pages={6} // Each page takes 100% of the height of the canvas
-        distance={1} // A factor that increases scroll bar travel (default: 1)
-        damping={0.1} // Friction, higher is faster (default: 4)
-        horizontal={false} // Can also scroll horizontally (default: false)
-        infinite={false} // Can also scroll infinitely (default: false)
+        pages={6}
+        distance={1}
+        damping={0.1}
+        horizontal={false}
+        infinite={false}
       >
         <Robot scale={0.03} position={[0, -3, 0]} />
         <Sparkles size={2} color={"#fff"} scale={[10, 10, 10]} />
@@ -58,10 +58,10 @@ const App = () => {
         </Backdrop>
 
         <Float
-          speed={4} // Animation speed, defaults to 1
-          rotationIntensity={0.5} // XYZ rotation intensity, defaults to 1
-          floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-          floatingRange={[1, 1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+          speed={4} 
+          rotationIntensity={0.5} 
+          floatIntensity={1} 
+          floatingRange={[1, 1]} 
         >
           <Ring
             scale={3.5}
